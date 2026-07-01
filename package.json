@@ -1,11 +1,42 @@
 {
   "name": "build-select",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "Vue component library",
+  "type": "module",
   "license": "ISC",
-  "description": ""
+  "author": "",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/build-select.umd.cjs",
+  "module": "./dist/build-select.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/build-select.js",
+      "require": "./dist/build-select.umd.cjs"
+    },
+    "./style.css": "./dist/build-select.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "type-check": "vue-tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.4.6",
+    "@storybook/vue3-vite": "^10.4.6",
+    "@types/node": "^20.19.43",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "storybook": "^10.4.6",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3",
+    "vue-tsc": "^2.2.12"
+  },
+  "dependencies": {
+    "vue": "^3.5.39"
+  }
 }

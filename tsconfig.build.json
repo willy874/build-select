@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "rootDir": "src/packages/v1"
+  },
+  "include": ["src/packages/v1", "env.d.ts"],
+  "exclude": ["**/*.stories.ts"]
+}
