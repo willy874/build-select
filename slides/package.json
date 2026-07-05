@@ -1,0 +1,16 @@
+{
+  "name": "build-select-slides",
+  "type": "module",
+  "private": true,
+  "description": "Slidev 簡報：build-select 的 Select 元件逐版升級歷程",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.0.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "vue": "^3.5.39"
+  }
+}
