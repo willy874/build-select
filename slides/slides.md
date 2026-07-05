@@ -49,8 +49,8 @@ layout: center
 
 | 版本 | 主題 | 核心變化 | 狀態 |
 | --- | --- | --- | --- |
-| **v1** | 原生 `<select>` 包裝 | v-model、options、size、disabled | ✅ 目前 |
-| _v2_ | _待定_ | _下一次升級時補上_ | 🚧 規劃中 |
+| **v1** | 原生 `<select>` 包裝 | v-model、options、size、disabled | ✅ 基礎 |
+| **v2** | 自訂 `<div>` 下拉選單 | 自訂面板、外觀可控、API 相容 v1（陽春版） | ✅ 目前 |
 
 </div>
 
@@ -64,7 +64,11 @@ layout: center
 src: ./pages/v1.md
 ---
 
-<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v2.md 即可 ↑↑↑ -->
+---
+src: ./pages/v2.md
+---
+
+<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v3.md 即可 ↑↑↑ -->
 
 ---
 layout: center

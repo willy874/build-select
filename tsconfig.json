@@ -16,7 +16,8 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@v1/*": ["src/packages/v1/*"]
+      "@v1/*": ["src/packages/v1/*"],
+      "@v2/*": ["src/packages/v2/*"]
     }
   },
   "include": ["src", "env.d.ts", ".storybook"],

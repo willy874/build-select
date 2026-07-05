@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@v1": fileURLToPath(new URL("./src/packages/v1", import.meta.url)),
+      "@v2": fileURLToPath(new URL("./src/packages/v2", import.meta.url)),
     },
   },
   build: {
