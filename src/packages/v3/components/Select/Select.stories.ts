@@ -11,7 +11,7 @@ const fruits: SelectOption[] = [
 ];
 
 const meta: Meta<typeof Select> = {
-  title: "v2/Select",
+  title: "v3/Select",
   component: Select,
   tags: ["autodocs"],
   argTypes: {
@@ -66,24 +66,22 @@ export const Empty: Story = {
 };
 
 /**
- * ⚠️ v2 的缺陷：面板被父層 `overflow` 裁切。
+ * ✅ v3 的解法：面板不再被父層 `overflow` 裁切。
  *
- * v2 的下拉面板用 `position: absolute` 相對元件父層定位，
- * 因此只要任何祖先層設了 `overflow: hidden / auto / scroll`
- * （常見於卡片、對話框、表格、側邊欄），
- * 超出容器範圍的面板就會被「切掉」，選項無法完整顯示或點選。
+ * v3 用 **Portal** 元件把下拉面板傳送到 `<body>`，並改以
+ * `position: fixed` + trigger 的 viewport 座標即時定位。
+ * 面板已脫離元件父層，因此任何祖先的 `overflow: hidden / auto / scroll`
+ * 都無法再裁切它。
  *
- * 下方把 Select 放進一個 `overflow: hidden` 的矮卡片裡，
- * 展開後即可看到面板被卡片邊界裁斷。
- *
- * 👉 這正是 v3 以 **Portal** 元件要解決的問題。
+ * 這是與 v2「ClippedInOverflowContainer」**完全相同**的外層卡片，
+ * 但 v3 的面板可以完整浮出卡片邊界。
  */
-export const ClippedInOverflowContainer: Story = {
+export const NotClippedInOverflowContainer: Story = {
   parameters: {
     docs: {
       description: {
         story:
-          "把 Select 放進 `overflow: hidden` 的矮卡片，展開後面板會被卡片邊界裁切——這是 v2 `position: absolute` 定位的先天限制。",
+          "與 v2 缺陷案例相同的 `overflow: hidden` 矮卡片。v3 透過 Portal 把面板傳送到 body，展開後面板完整顯示、不再被裁切。",
       },
     },
   },
@@ -100,21 +98,56 @@ export const ClippedInOverflowContainer: Story = {
     template: `
       <div style="max-width: 320px;">
         <p style="margin: 0 0 8px; color: #6b7280; font-size: 13px;">
-          外層卡片：<code>overflow: hidden</code> + 固定高度
+          外層卡片：<code>overflow: hidden</code> + 固定高度（與 v2 案例相同）
         </p>
         <div style="
           height: 96px;
           padding: 16px;
-          border: 1px dashed #ef4444;
+          border: 1px dashed #22c55e;
           border-radius: 8px;
           overflow: hidden;
-          background: #fff7f7;
+          background: #f3fdf6;
         ">
           <Select v-bind="args" v-model="model" />
         </div>
-        <p style="margin: 8px 0 0; color: #ef4444; font-size: 13px;">
-          ⚠️ 展開下拉——面板超出紅色虛線卡片的部分會被裁掉。
+        <p style="margin: 8px 0 0; color: #16a34a; font-size: 13px;">
+          ✅ 展開下拉——面板由 Portal 傳送到 body，完整浮出卡片、不被裁切。
         </p>
+      </div>
+    `,
+  }),
+};
+
+/**
+ * 進一步驗證：即使外層是**可捲動容器**，面板依然能正確定位並隨捲動更新。
+ *
+ * v3 的 `position: fixed` 定位會在捲動 / resize 時重新校正 trigger 座標，
+ * 因此面板始終貼齊觸發器。
+ */
+export const InsideScrollContainer: Story = {
+  render: (args) => ({
+    components: { Select },
+    setup() {
+      const model = ref(args.modelValue ?? null);
+      watch(
+        () => args.modelValue,
+        (v) => (model.value = v ?? null)
+      );
+      return { args, model };
+    },
+    template: `
+      <div style="
+        height: 160px;
+        width: 320px;
+        padding: 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        overflow: auto;
+        background: #fafafa;
+      ">
+        <div style="height: 60px;"></div>
+        <Select v-bind="args" v-model="model" />
+        <div style="height: 400px;"></div>
       </div>
     `,
   }),

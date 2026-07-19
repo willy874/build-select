@@ -50,7 +50,8 @@ layout: center
 | 版本 | 主題 | 核心變化 | 狀態 |
 | --- | --- | --- | --- |
 | **v1** | 原生 `<select>` 包裝 | v-model、options、size、disabled | ✅ 基礎 |
-| **v2** | 自訂 `<div>` 下拉選單 | 自訂面板、外觀可控、API 相容 v1（陽春版） | ✅ 目前 |
+| **v2** | 自訂 `<div>` 下拉選單 | 自訂面板、外觀可控、API 相容 v1（陽春版） | ✅ |
+| **v3** | Portal 傳送下拉面板 | 面板送 `body`、fixed 定位、解 overflow 裁切 | ✅ 目前 |
 
 </div>
 
@@ -68,16 +69,20 @@ src: ./pages/v1.md
 src: ./pages/v2.md
 ---
 
-<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v3.md 即可 ↑↑↑ -->
+---
+src: ./pages/v3.md
+---
+
+<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v4.md 即可 ↑↑↑ -->
 
 ---
 layout: center
 class: text-center
 ---
 
-# 待續 …
+# 三版走過來
 
-下一版 Select 升級時，這份簡報會再長出一頁
+原生包裝 → 自訂面板 → Portal 傳送
 
 <div class="pt-6 text-sm opacity-60">
 build-select · Select 元件升級之旅

@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       "@v1": fileURLToPath(new URL("./src/packages/v1", import.meta.url)),
       "@v2": fileURLToPath(new URL("./src/packages/v2", import.meta.url)),
+      "@v3": fileURLToPath(new URL("./src/packages/v3", import.meta.url)),
     },
   },
   build: {
