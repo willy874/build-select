@@ -55,7 +55,8 @@ layout: center
 | **v4** | 鍵盤操作與無障礙 | 補回原生鍵盤 / 焦點 / ARIA 語意，API 相容 v3 | ✅ |
 | **v5** | 智慧定位與子元件拆分 | 面板貼底翻面、composables + 呈現元件拆分，API 相容 v4 | ✅ |
 | **v6** | Filter / Search | 打字即過濾、拼音模糊比對、命中高亮，API 相容 v5 | ✅ |
-| **v7** | 多選（multiple） | 陣列 v-model、可移除 chips、可搜尋的多選，API 相容 v6 | ✅ 目前 |
+| **v7** | 多選（multiple） | 陣列 v-model、可移除 chips、可搜尋的多選，API 相容 v6 | ✅ |
+| **v8** | 遠端 · 無限滾動 · 虛擬列表 | 只渲染可視範圍、捲到底載下一頁、遠端查詢，API 相容 v7 | ✅ 目前 |
 
 </div>
 
@@ -93,16 +94,20 @@ src: ./pages/v6.md
 src: ./pages/v7.md
 ---
 
-<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v8.md 即可 ↑↑↑ -->
+---
+src: ./pages/v8.md
+---
+
+<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v9.md 即可 ↑↑↑ -->
 
 ---
 layout: center
 class: text-center
 ---
 
-# 七版走過來
+# 八版走過來
 
-原生包裝 → 自訂面板 → Portal 傳送 → 鍵盤與無障礙 → 智慧定位與拆分 → 搜尋過濾 → 多選
+原生包裝 → 自訂面板 → Portal 傳送 → 鍵盤與無障礙 → 智慧定位與拆分 → 搜尋過濾 → 多選 → 遠端虛擬列表
 
 <div class="pt-6 text-sm opacity-60">
 build-select · Select 元件升級之旅
