@@ -10,6 +10,7 @@ export default defineConfig({
       "@v1": fileURLToPath(new URL("./src/packages/v1", import.meta.url)),
       "@v2": fileURLToPath(new URL("./src/packages/v2", import.meta.url)),
       "@v3": fileURLToPath(new URL("./src/packages/v3", import.meta.url)),
+      "@v4": fileURLToPath(new URL("./src/packages/v4", import.meta.url)),
     },
   },
   build: {
