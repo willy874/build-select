@@ -109,6 +109,76 @@ class: text-center
 
 原生包裝 → 自訂面板 → Portal 傳送 → 鍵盤與無障礙 → 智慧定位與拆分 → 搜尋過濾 → 多選 → 遠端虛擬列表
 
+---
+layout: two-cols-header
+---
+
+# 總結 · 這顆 Select 現在會什麼
+
+<div class="text-sm opacity-70 -mt-2">八版走完的成果與底層結構</div>
+
+::left::
+
+**能力**
+
+- 單選 / 多選（可移除 chips）
+- 搜尋過濾（拼音 `pinyin-pro` + 命中高亮）
+- 遠端 + 無限滾動 + 虛擬列表
+- 完整鍵盤操作 + ARIA（combobox / listbox）
+- 智慧定位（flip + 高度夾住）、Portal 浮層
+
+::right::
+
+**架構**
+
+- 大腦：composables
+  <div class="text-xs opacity-70">useSelect · useListNavigation · useTypeahead · useFilter · useFloatingPosition · useVirtualList</div>
+- 臉：呈現子元件
+  <div class="text-xs opacity-70">Trigger 系列 · Dropdown · Option · Chips · SearchInput</div>
+- 每版對外 API 相容：`@vN` → `@vN+1` 無痛切換
+
+---
+layout: two-cols-header
+---
+
+# 未完成遺珠
+
+<div class="text-sm opacity-70 -mt-2">這趟停在 v8；想做、但這輪沒做到的</div>
+
+::left::
+
+**選項呈現**
+
+- 豐富選項：icon / 頭像 / 次要描述
+- 自訂渲染 slots（選項 / 已選值 / chip）
+- 選項分組（分類標題）
+
+**輸入便利**
+
+- 可清除（clearable 一鍵清空）
+- 自由建立新選項（creatable / tags）
+- 多選「全選 / 反選」
+
+::right::
+
+**狀態 · 韌性**
+
+- 遠端錯誤與重試、請求競態取消
+- 空 / 載入 / 錯誤更細緻的呈現
+
+**整合 · 品質**
+
+- 原生表單整合（name / 提交 / 驗證）
+- 單元測試（composables 可純函式測）
+- 深色模式 / RTL、開闔過場動畫
+
+---
+layout: center
+class: text-center
+---
+
+# 謝謝
+
 <div class="pt-6 text-sm opacity-60">
 build-select · Select 元件升級之旅
 </div>
