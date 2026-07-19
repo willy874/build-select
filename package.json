@@ -37,6 +37,7 @@
     "vue-tsc": "^2.2.12"
   },
   "dependencies": {
+    "pinyin-pro": "^3.28.1",
     "vue": "^3.5.39"
   }
 }

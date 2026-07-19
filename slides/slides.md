@@ -53,7 +53,8 @@ layout: center
 | **v2** | 自訂 `<div>` 下拉選單 | 自訂面板、外觀可控、API 相容 v1（陽春版） | ✅ |
 | **v3** | Portal 傳送下拉面板 | 面板送 `body`、fixed 定位、解 overflow 裁切 | ✅ |
 | **v4** | 鍵盤操作與無障礙 | 補回原生鍵盤 / 焦點 / ARIA 語意，API 相容 v3 | ✅ |
-| **v5** | 智慧定位與子元件拆分 | 面板貼底翻面、composables + 呈現元件拆分，API 相容 v4 | ✅ 目前 |
+| **v5** | 智慧定位與子元件拆分 | 面板貼底翻面、composables + 呈現元件拆分，API 相容 v4 | ✅ |
+| **v6** | Filter / Search | 打字即過濾、拼音模糊比對、命中高亮，API 相容 v5 | ✅ 目前 |
 
 </div>
 
@@ -83,16 +84,20 @@ src: ./pages/v4.md
 src: ./pages/v5.md
 ---
 
-<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v6.md 即可 ↑↑↑ -->
+---
+src: ./pages/v6.md
+---
+
+<!-- ↑↑↑ 未來新增版本時，複製上面的 src 區塊指向 ./pages/v7.md 即可 ↑↑↑ -->
 
 ---
 layout: center
 class: text-center
 ---
 
-# 五版走過來
+# 六版走過來
 
-原生包裝 → 自訂面板 → Portal 傳送 → 鍵盤與無障礙 → 智慧定位與拆分
+原生包裝 → 自訂面板 → Portal 傳送 → 鍵盤與無障礙 → 智慧定位與拆分 → 搜尋過濾
 
 <div class="pt-6 text-sm opacity-60">
 build-select · Select 元件升級之旅
