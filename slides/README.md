@@ -25,7 +25,7 @@ pnpm --filter build-select-slides export   # 匯出成 PDF
 
 ```
 slides/
-├── slides.md              # 主檔：封面、版本總覽，用 src: 串接各版本
+├── slides.md              # 主檔：封面、用 src: 串接各版本、結尾「八版走過來」總覽表
 ├── vite.config.ts         # @v1..@v8 alias → 元件庫原始碼
 ├── tsconfig.json          # 同一組 alias，給編輯器用
 ├── pages/
@@ -41,7 +41,8 @@ Live demo 透過 `@vN` alias 直接 `import` 元件庫原始碼（`../src/packag
 
 假設元件庫新增了 `src/packages/v2`：
 
-1. **新增內容頁**：複製 `pages/v1.md` 成 `pages/v2.md`，改寫該版的設計目標 / API / 程式碼 / 限制。
+1. **新增內容頁**：複製 `pages/v1.md` 成 `pages/v2.md`，改寫該版的設計目標 / 相對前版差異 / 實際跑跑看。
+   deck 不放程式碼實作解說，實作細節留在該版的 `CHANGELOG.md`。
 2. **新增 live demo**：複製 `components/SelectDemoV1.vue` 成 `SelectDemoV2.vue`，把 import 改成 `@v2`，並在 `v2.md` 用 `<SelectDemoV2 />`。
    若該版的 alias 還沒建（目前已備妥 `@v1`~`@v8`），在 `vite.config.ts` 與 `tsconfig.json` 各補一行。
 3. **串接進主檔**：在 `slides.md` 的 v1 `src:` 區塊下方，照樣加一段：
@@ -52,6 +53,7 @@ Live demo 透過 `@vN` alias 直接 `import` 元件庫原始碼（`../src/packag
    ---
    ```
 
-4. **更新版本總覽表**：在 `slides.md` 的「版本總覽」表格補一列，把 v2 狀態改成 ✅。
+4. **更新版本總覽表**：在 `slides.md` 結尾「八版走過來」的表格補一列（版本 / 主題 / 核心變化）。
+   該頁高度已無餘裕，補列後記得把 `.version-table` 的 `font-size` 往下調（目前 `0.92rem`）並確認上下沒被切掉。
 
 就這樣，一版一頁，簡報跟著元件庫一起演進。

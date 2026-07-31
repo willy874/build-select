@@ -39,31 +39,6 @@ class: text-center
 
 </div>
 
----
-layout: center
----
-
-# 版本總覽
-
-<div class="pt-4">
-
-| 版本 | 主題 | 核心變化 | 狀態 |
-| --- | --- | --- | --- |
-| **v1** | 原生 `<select>` 包裝 | v-model、options、size、disabled | ✅ 基礎 |
-| **v2** | 自訂 `<div>` 下拉選單 | 自訂面板、外觀可控、API 相容 v1（陽春版） | ✅ |
-| **v3** | Portal 傳送下拉面板 | 面板送 `body`、fixed 定位、解 overflow 裁切 | ✅ |
-| **v4** | 鍵盤操作與無障礙 | 補回原生鍵盤 / 焦點 / ARIA 語意，API 相容 v3 | ✅ |
-| **v5** | 智慧定位與子元件拆分 | 面板貼底翻面、composables + 呈現元件拆分，API 相容 v4 | ✅ |
-| **v6** | Filter / Search | 打字即過濾、拼音模糊比對、命中高亮，API 相容 v5 | ✅ |
-| **v7** | 多選（multiple） | 陣列 v-model、可移除 chips、可搜尋的多選，API 相容 v6 | ✅ |
-| **v8** | 遠端 · 無限滾動 · 虛擬列表 | 只渲染可視範圍、捲到底載下一頁、遠端查詢，API 相容 v7 | ✅ 目前 |
-
-</div>
-
-<div class="pt-8 text-sm opacity-60 text-center">
-每次新增一版，就在這張表補一列、在 pages/ 加一頁
-</div>
-
 <!-- ↓↓↓ 各版本內容：每新增一版就在下面加一行 src: 引用 ↓↓↓ -->
 
 ---
@@ -102,12 +77,35 @@ src: ./pages/v8.md
 
 ---
 layout: center
-class: text-center
 ---
 
 # 八版走過來
 
-原生包裝 → 自訂面板 → Portal 傳送 → 鍵盤與無障礙 → 智慧定位與拆分 → 搜尋過濾 → 多選 → 遠端虛擬列表
+<div class="version-table">
+
+| 版本 | 主題 | 核心變化 |
+| --- | --- | --- |
+| **v1** | 原生 `<select>` 包裝 | v-model、options、size、disabled |
+| **v2** | 自訂 `<div>` 下拉選單 | 自訂面板、外觀可控（陽春版），API 相容 v1 |
+| **v3** | Portal 傳送下拉面板 | 面板送 `body`、fixed 定位、解 overflow 裁切 |
+| **v4** | 鍵盤操作與無障礙 | 補回原生鍵盤 / 焦點 / ARIA 語意 |
+| **v5** | 智慧定位與子元件拆分 | 面板貼底翻面、composables + 呈現元件拆分 |
+| **v6** | Filter / Search | 打字即過濾、拼音模糊比對、命中高亮 |
+| **v7** | 多選（multiple） | 陣列 v-model、可移除 chips、可搜尋的多選 |
+| **v8** | 遠端 · 無限滾動 · 虛擬列表 | 只渲染可視範圍、捲到底載下一頁、遠端查詢 |
+
+</div>
+
+<div class="pt-3 text-xs opacity-60 text-center">
+每一版都與前一版 API 相容 —— import 從 <code>@vN</code> 換成 <code>@vN+1</code> 即可
+</div>
+
+<style>
+h1 { margin-bottom: 0.6rem; }
+.version-table table { font-size: 0.92rem; line-height: 1.35; }
+.version-table th,
+.version-table td { padding-top: 0.42rem; padding-bottom: 0.42rem; }
+</style>
 
 ---
 layout: two-cols-header
