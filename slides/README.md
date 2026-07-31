@@ -5,27 +5,36 @@
 
 ## 開發指令
 
-在 `slides/` 目錄下執行：
+本目錄是 repo root 的 pnpm workspace 成員，依賴由 root 統一安裝：
 
 ```bash
-pnpm install      # 第一次先安裝
-pnpm dev          # 啟動簡報（http://localhost:3030）
-pnpm build        # 產出靜態網站到 dist/
-pnpm export       # 匯出成 PDF
+pnpm install      # 在 repo root 執行，一次裝好元件庫與簡報
 ```
+
+之後在 repo root 執行：
+
+```bash
+pnpm slides                                # 啟動簡報（http://localhost:3030）
+pnpm slides:build                          # 產出靜態網站到 slides/dist/
+pnpm --filter build-select-slides export   # 匯出成 PDF
+```
+
+或在 `slides/` 目錄下直接跑 `pnpm dev` / `pnpm build` / `pnpm export`。
 
 ## 結構
 
 ```
 slides/
 ├── slides.md              # 主檔：封面、版本總覽，用 src: 串接各版本
+├── vite.config.ts         # @v1..@v8 alias → 元件庫原始碼
+├── tsconfig.json          # 同一組 alias，給編輯器用
 ├── pages/
 │   └── v1.md              # 每個版本一個檔案
 └── components/
     └── SelectDemoV1.vue   # 每版的「實際跑跑看」live demo
 ```
 
-Live demo 直接 `import` 元件庫原始碼（`../../src/packages/vN`），
+Live demo 透過 `@vN` alias 直接 `import` 元件庫原始碼（`../src/packages/vN`），
 所以簡報裡跑的永遠是**真的元件**，不會與實作走鐘。
 
 ## 每新增一版 Select 時（逐版更新流程）
@@ -33,7 +42,8 @@ Live demo 直接 `import` 元件庫原始碼（`../../src/packages/vN`），
 假設元件庫新增了 `src/packages/v2`：
 
 1. **新增內容頁**：複製 `pages/v1.md` 成 `pages/v2.md`，改寫該版的設計目標 / API / 程式碼 / 限制。
-2. **新增 live demo**：複製 `components/SelectDemoV1.vue` 成 `SelectDemoV2.vue`，把 import 指向 `../../src/packages/v2`，並在 `v2.md` 用 `<SelectDemoV2 />`。
+2. **新增 live demo**：複製 `components/SelectDemoV1.vue` 成 `SelectDemoV2.vue`，把 import 改成 `@v2`，並在 `v2.md` 用 `<SelectDemoV2 />`。
+   若該版的 alias 還沒建（目前已備妥 `@v1`~`@v8`），在 `vite.config.ts` 與 `tsconfig.json` 各補一行。
 3. **串接進主檔**：在 `slides.md` 的 v1 `src:` 區塊下方，照樣加一段：
 
    ```md

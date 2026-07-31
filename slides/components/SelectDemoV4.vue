@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v2 / v4 Select —— 簡報 demo 與實作永遠同步
-import { Select as SelectV2 } from "../../src/packages/v2";
-import { Select as SelectV4 } from "../../src/packages/v4";
-import type { SelectOption } from "../../src/packages/v4";
+import { Select as SelectV2 } from "@v2";
+import { Select as SelectV4 } from "@v4";
+import type { SelectOption } from "@v4";
 
 const fruits: SelectOption[] = [
   { label: "蘋果", value: "apple" },

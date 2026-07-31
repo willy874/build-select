@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v8 Select —— 簡報 demo 與實作永遠同步
-import { Select as SelectV8 } from "../../src/packages/v8";
-import type { SelectOption, SelectValue } from "../../src/packages/v8";
+import { Select as SelectV8 } from "@v8";
+import type { SelectOption, SelectValue } from "@v8";
 
 // 模擬遠端資料源:1000 筆使用者,依 query 過濾後分頁回傳
 const ALL: SelectOption[] = Array.from({ length: 1000 }, (_, i) => ({

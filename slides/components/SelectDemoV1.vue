@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v1 Select —— 簡報 demo 與實作永遠同步
-import { Select } from "../../src/packages/v1";
-import type { SelectOption } from "../../src/packages/v1";
+import { Select } from "@v1";
+import type { SelectOption } from "@v1";
 
 const fruits: SelectOption[] = [
   { label: "蘋果", value: "apple" },

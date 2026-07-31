@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v7 Select —— 簡報 demo 與實作永遠同步
-import { Select as SelectV7 } from "../../src/packages/v7";
-import type { SelectOption, SelectValue } from "../../src/packages/v7";
+import { Select as SelectV7 } from "@v7";
+import type { SelectOption, SelectValue } from "@v7";
 
 const cities: SelectOption[] = [
   { label: "臺北", value: "tpe" },
