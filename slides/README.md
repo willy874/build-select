@@ -25,11 +25,20 @@ pnpm --filter build-select-slides export   # 匯出成 PDF
 
 ```
 slides/
-├── slides.md              # 主檔：封面、用 src: 串接各版本、結尾「八版走過來」總覽表
+├── slides.md              # 主檔：封面、用 src: 串接各版本、結尾「八版走過來」總覽表、最後的工商頁
 ├── vite.config.ts         # @v1..@v8 alias → 元件庫原始碼
 ├── tsconfig.json          # 同一組 alias，給編輯器用
 ├── pages/
-│   └── v1.md              # 每個版本一個檔案
+│   ├── about.md           # 01 關於竹子（含待填欄位）
+│   ├── why.md             # 02 怎麼會開始想造輪子
+│   ├── v1.md              # 03 每個版本一個檔案（v1~v8）
+│   ├── library.md         # 04 除了做出來，怎麼變成 Library
+│   ├── closing.md         # 05 結語
+│   └── bonus-refactor.md  # 加映（謝謝頁之後）：大型團隊 / 大型專案的重構困難
+├── assets/
+│   ├── photo.jpeg         # 講者頭像
+│   ├── threads-qr.svg     # Threads @f2e_willy（about 頁與工商頁共用）
+│   └── merak-qr.svg       # Merak 產品頁（工商頁）
 └── components/
     └── SelectDemoV1.vue   # 每版的「實際跑跑看」live demo
 ```
