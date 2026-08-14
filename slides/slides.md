@@ -401,3 +401,77 @@ class: text-center
 <div class="pt-6 text-sm opacity-60">
 掃完了嗎？沒掃完我可以再停一下。
 </div>
+
+---
+layout: center
+class: text-center
+---
+
+# Q & A
+
+<div class="text-sm opacity-70 -mt-2">有問題可以直接舉手，或掃 QR Code 丟到 Slido</div>
+
+<div class="qa">
+
+[![Slido Q&A](./assets/slido-qr.svg)](https://app.sli.do/event/ghy93JiL38xHc1Yebt4Y5A/live/questions)
+
+<div class="cap">
+  <div class="t">Slido · 線上提問</div>
+  <div class="d">不用具名，也可以幫別人的問題按讚</div>
+  <div class="u"><a href="https://app.sli.do/event/ghy93JiL38xHc1Yebt4Y5A/live/questions" target="_blank" rel="noopener">app.sli.do/event/ghy93JiL38xHc1Yebt4Y5A</a></div>
+</div>
+
+</div>
+
+<style>
+.qa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22rem;
+  max-width: 100%;
+  margin: 2rem auto 0;
+  padding: 1.2rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(125, 125, 125, 0.08);
+}
+.qa img {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 0 1px rgba(125, 125, 125, 0.18);
+}
+.qa .cap { margin-top: 0.85rem; }
+.qa .cap .t {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.qa .cap .d {
+  font-size: 0.78rem;
+  opacity: 0.65;
+  line-height: 1.5;
+  margin-top: 0.3rem;
+}
+.qa .cap .u {
+  font-family: var(--slidev-code-font-family, monospace);
+  font-size: 0.72rem;
+  margin-top: 0.35rem;
+}
+.qa .cap .u a {
+  color: inherit;
+  opacity: 0.5;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(125, 125, 125, 0.45);
+  transition: opacity 0.15s;
+}
+.qa .cap .u a:hover { opacity: 0.9; }
+.qa a { cursor: pointer; }
+.qa > p { margin: 0; }
+</style>
+
+<!--
+講者備忘：QA 環節。
+QR Code 掃進去是 Slido，讓不好意思舉手的人也能問。
+留在這一頁不要翻，一邊看 Slido 一邊回答。
+-->

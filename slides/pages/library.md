@@ -172,14 +172,14 @@ layout: two-cols-header
 -->
 
 ---
-layout: two-cols-header
+layout: center
 ---
 
 # 版本與契約：你承諾的比你以為的多
 
 <div class="text-sm opacity-70 -mt-2">版本號是拿來溝通的，不是拿來把數字排整齊的</div>
 
-::left::
+<div class="max-w-2xl mx-auto pt-6">
 
 **「公開 API」到底包含什麼**
 
@@ -192,17 +192,6 @@ layout: two-cols-header
 只要別人的程式碼會因為你的改動而壞掉，那就是破壞性變更——跟你有沒有寫在文件上完全無關。
 </div>
 
-::right::
-
-**這個專案怎麼做的，以及代價**
-
-- `@v1` ~ `@v8` 通通並存、彼此相容、不逼你升級
-- **好處**：可以攤開來對照演進，這場簡報才成立
-- **代價**：八份高度重複的程式碼，任何共通修正都要改八次
-
-<div class="pt-2 text-sm opacity-70">
-真實產品不會這樣養。<br />
-等價的做法是一份程式碼，靠語意化版本、CHANGELOG 跟升級指南來扛演進。
 </div>
 
 ---

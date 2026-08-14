@@ -57,10 +57,9 @@ layout: two-cols-header
 
 - 取代 Element Plus / Naive UI / Ant Design
 - 證明現成元件庫做得不好
-- 上 production（至少這輪不是）
 
 <div class="pt-4 text-sm opacity-70">
-造輪子的產出從來不只是那顆輪子，<br />而是「看懂別人的輪子」這件事——這也是最後一頁要講的。
+造輪子的產出從來不只是那顆輪子，<br />而是「看懂別人的輪子」這件事。
 </div>
 
 ---
