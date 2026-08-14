@@ -15,7 +15,8 @@ const model = ref<string | number | null>(null);
 </script>
 
 <template>
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <Select v-model="model" :options="fruits" placeholder="請選擇水果" />
     <div class="demo__state">
       目前選取：<code>{{ model ?? "null" }}</code>

@@ -51,7 +51,8 @@ function onLoadMore() {
 </script>
 
 <template>
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <div class="demo__label">remote + 無限滾動 + 虛擬列表(1000 筆使用者)</div>
     <SelectV8
       v-model="model"

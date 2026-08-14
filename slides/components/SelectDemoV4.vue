@@ -19,7 +19,8 @@ const modelV4 = ref<string | number | null>(null);
 </script>
 
 <template>
-  <div class="cmp">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="cmp" @keydown.stop @keyup.stop>
     <!-- 左：v2 自訂 div，只能用滑鼠 -->
     <div class="cmp__col">
       <div class="cmp__label cmp__label--bad">v2 · 自訂 div，無鍵盤</div>

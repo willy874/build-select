@@ -242,9 +242,9 @@ layout: two-cols-header
 layout: two-cols-header
 ---
 
-# 想做但這輪沒做到的
+# 遺珠之憾
 
-<div class="text-sm opacity-70 -mt-2">這趟就停在 v8，下面這些都在待辦裡躺著</div>
+<div class="text-sm opacity-70 -mt-2">不是做不到，是這趟就停在 v8——這些都還躺在待辦裡</div>
 
 ::left::
 
@@ -258,7 +258,8 @@ layout: two-cols-header
 
 - 一鍵清空（clearable）
 - 打什麼就建什麼（creatable / tags）
-- 多選的「全選 / 反選」
+- 多選的「全選 / 反選」、選取上限
+- chips 可以拖曳排序
 
 ::right::
 
@@ -266,12 +267,14 @@ layout: two-cols-header
 
 - 遠端出錯要能重試，還要處理請求打架
 - 空的 / 載入中 / 錯誤，都該長得更清楚
+- 只拿得到 id 的時候，已選值的名字要補得回來
 
 **接得起來、信得過**
 
 - 接原生表單（name / 提交 / 驗證）
 - 補測試（composables 都是純函式，好測）
 - 深色模式 / RTL，還有開合的過場動畫
+- SSR 站得住、手機上改成從底部推上來
 
 ---
 src: ./pages/library.md

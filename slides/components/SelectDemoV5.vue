@@ -20,7 +20,8 @@ const modelV5 = ref<string | number | null>(null);
 
 <template>
   <!-- spacer 把兩顆 Select 推到接近視窗底部,讓下方空間不足以觸發 flip -->
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <div class="demo__spacer">↓ 兩顆都貼近視窗底部,同一高度展開比一比</div>
     <div class="demo__row">
       <div class="demo__col">

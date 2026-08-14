@@ -19,7 +19,8 @@ const model = ref<string | number | null>(null);
 </script>
 
 <template>
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <div class="demo__label">v6 · filterable(可打拼音)</div>
     <SelectV6 v-model="model" :options="fruits" filterable placeholder="搜尋水果" />
 

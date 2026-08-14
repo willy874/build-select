@@ -17,7 +17,8 @@ const modelV3 = ref<string | number | null>(null);
 </script>
 
 <template>
-  <div class="cmp">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="cmp" @keydown.stop @keyup.stop>
     <!-- 同一張 overflow: hidden 的矮卡片，左右分別放 v2 / v3 -->
     <div class="cmp__col">
       <div class="cmp__label cmp__label--bad">v2 · position: absolute</div>

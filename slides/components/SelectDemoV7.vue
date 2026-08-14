@@ -22,7 +22,8 @@ const plain = ref<SelectValue[]>([]);
 </script>
 
 <template>
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <div class="demo__block">
       <div class="demo__label">multiple + filterable(可搜尋的多選)</div>
       <SelectV7
