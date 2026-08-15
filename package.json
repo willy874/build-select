@@ -27,6 +27,7 @@
     "build-storybook": "storybook build",
     "slides": "pnpm --filter build-select-slides dev",
     "slides:build": "pnpm --filter build-select-slides build",
+    "slides:build:pages": "pnpm --filter build-select-slides build:pages",
     "slides:artifact": "pnpm --filter build-select-slides build:artifact"
   },
   "devDependencies": {
