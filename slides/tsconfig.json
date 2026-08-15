@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@v1": ["../src/packages/v1"],
+      "@v2": ["../src/packages/v2"],
+      "@v3": ["../src/packages/v3"],
+      "@v4": ["../src/packages/v4"],
+      "@v5": ["../src/packages/v5"],
+      "@v6": ["../src/packages/v6"],
+      "@v7": ["../src/packages/v7"],
+      "@v8": ["../src/packages/v8"]
+    }
+  },
+  "include": ["components", "vite.config.ts", "../env.d.ts"]
+}

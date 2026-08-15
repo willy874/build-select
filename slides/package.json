@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
+    "build:artifact": "node scripts/build-artifact.mjs",
     "export": "slidev export"
   },
   "dependencies": {
     "@slidev/cli": "^52.0.0",
     "@slidev/theme-seriph": "^0.25.0",
     "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "vite-plugin-singlefile": "^2.3.3"
   }
 }

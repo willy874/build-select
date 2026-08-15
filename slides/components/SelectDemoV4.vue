@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v2 / v4 Select —— 簡報 demo 與實作永遠同步
-import { Select as SelectV2 } from "../../src/packages/v2";
-import { Select as SelectV4 } from "../../src/packages/v4";
-import type { SelectOption } from "../../src/packages/v4";
+import { Select as SelectV2 } from "@v2";
+import { Select as SelectV4 } from "@v4";
+import type { SelectOption } from "@v4";
 
 const fruits: SelectOption[] = [
   { label: "蘋果", value: "apple" },
@@ -19,7 +19,8 @@ const modelV4 = ref<string | number | null>(null);
 </script>
 
 <template>
-  <div class="cmp">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="cmp" @keydown.stop @keyup.stop>
     <!-- 左：v2 自訂 div，只能用滑鼠 -->
     <div class="cmp__col">
       <div class="cmp__label cmp__label--bad">v2 · 自訂 div，無鍵盤</div>

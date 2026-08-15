@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v4 / v5 Select —— 簡報 demo 與實作永遠同步
-import { Select as SelectV4 } from "../../src/packages/v4";
-import { Select as SelectV5 } from "../../src/packages/v5";
-import type { SelectOption } from "../../src/packages/v5";
+import { Select as SelectV4 } from "@v4";
+import { Select as SelectV5 } from "@v5";
+import type { SelectOption } from "@v5";
 
 const fruits: SelectOption[] = [
   { label: "蘋果", value: "apple" },
@@ -20,7 +20,8 @@ const modelV5 = ref<string | number | null>(null);
 
 <template>
   <!-- spacer 把兩顆 Select 推到接近視窗底部,讓下方空間不足以觸發 flip -->
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <div class="demo__spacer">↓ 兩顆都貼近視窗底部,同一高度展開比一比</div>
     <div class="demo__row">
       <div class="demo__col">

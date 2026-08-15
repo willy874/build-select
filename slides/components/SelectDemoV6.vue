@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // 直接引用元件庫原始碼中的 v6 Select —— 簡報 demo 與實作永遠同步
-import { Select as SelectV6 } from "../../src/packages/v6";
-import type { SelectOption } from "../../src/packages/v6";
+import { Select as SelectV6 } from "@v6";
+import type { SelectOption } from "@v6";
 
 const fruits: SelectOption[] = [
   { label: "蘋果", value: "apple" },
@@ -19,7 +19,8 @@ const model = ref<string | number | null>(null);
 </script>
 
 <template>
-  <div class="demo">
+  <!-- @keydown/@keyup.stop: 讓 demo 裡的鍵盤操作不要冒泡出去觸發 Slidev 的翻頁快捷鍵 -->
+  <div class="demo" @keydown.stop @keyup.stop>
     <div class="demo__label">v6 · filterable(可打拼音)</div>
     <SelectV6 v-model="model" :options="fruits" filterable placeholder="搜尋水果" />
 
