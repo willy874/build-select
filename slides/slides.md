@@ -6,6 +6,7 @@ info: |
   用 Slidev 記錄一顆 Select 被我重寫八次的過程。
   每多做一版，就在 pages/ 加一個 vN.md，然後在這裡引進來。
 class: text-center
+background: ./assets/cover-wheelwright.jpg
 transition: slide-left
 mdc: true
 ---
@@ -13,6 +14,28 @@ mdc: true
 # 來造一個下拉選單的輪子
 
 人家說不要重複造輪子，我偏要造一個七彩霓虹的輪子
+
+<style>
+/* 封面底圖細節多，薄壓一層遮罩保底，主要靠文字陰影把標題撐出來 */
+.slidev-layout.cover {
+  position: relative;
+}
+.slidev-layout.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+.slidev-layout.cover > * {
+  position: relative;
+  z-index: 1;
+}
+.slidev-layout.cover h1,
+.slidev-layout.cover p {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
+}
+</style>
 
 ---
 layout: center
@@ -305,7 +328,7 @@ layout: center
 
 # 工商時間
 
-<div class="text-sm opacity-70 -mt-2">真的最後了，借一分鐘講兩件跟 Select 沒關係的事</div>
+<div class="text-sm opacity-70 -mt-2">真的最後了，借一分鐘講幾件跟 Select 沒關係的事</div>
 
 <div class="promo">
 
@@ -315,8 +338,32 @@ layout: center
 
 <div class="cap">
   <div class="t">Threads · @f2e_willy</div>
-  <div class="d">平常在這裡碎碎念，偶爾會分享一些技術</div>
+  <div class="d">平常在這裡碎碎念，偶爾分享一些技術</div>
   <div class="u"><a href="https://www.threads.com/@f2e_willy" target="_blank" rel="noopener">threads.com/@f2e_willy</a></div>
+</div>
+
+</div>
+
+<div class="card">
+
+[![部落格 willy874.github.io](./assets/blog-qr.svg)](https://willy874.github.io/)
+
+<div class="cap">
+  <div class="t">部落格</div>
+  <div class="d">寫得比較完整的技術筆記都在這</div>
+  <div class="u"><a href="https://willy874.github.io/" target="_blank" rel="noopener">willy874.github.io</a></div>
+</div>
+
+</div>
+
+<div class="card">
+
+[![Line 社群](./assets/line-qr.svg)](https://line.me/ti/g2/P1wWCQNhVgsKYVMuuUw7WjANNKE3RsYKIGb7RA)
+
+<div class="cap">
+  <div class="t">Line 社群</div>
+  <div class="d">前端閒聊，有問題可以直接丟進來</div>
+  <div class="u"><a href="https://line.me/ti/g2/P1wWCQNhVgsKYVMuuUw7WjANNKE3RsYKIGb7RA" target="_blank" rel="noopener">line.me/ti/g2/…</a></div>
 </div>
 
 </div>
@@ -327,7 +374,7 @@ layout: center
 
 <div class="cap">
   <div class="t">Merak · 坤安科技</div>
-  <div class="d">零信任隱形網路防護平台——用 SDP 架構讓服務從公開網路上消失</div>
+  <div class="d">零信任 SDP 平台，讓服務從公開網路上消失</div>
   <div class="u"><a href="https://kunansec.com/solutions/merak/" target="_blank" rel="noopener">kunansec.com/solutions/merak</a></div>
 </div>
 
@@ -338,43 +385,44 @@ layout: center
 <style>
 .promo {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.2rem;
-  width: 46rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+  width: 56rem;
   max-width: 100%;
-  margin: 2rem auto 0;
+  margin: 1.6rem auto 0;
 }
 .promo .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.1rem 1rem;
+  padding: 0.9rem 0.7rem;
   border-radius: 0.5rem;
   background: rgba(125, 125, 125, 0.08);
 }
 .promo .card img {
-  width: 9rem;
-  height: 9rem;
+  width: 7.4rem;
+  height: 7.4rem;
   border-radius: 0.35rem;
   box-shadow: 0 0 0 1px rgba(125, 125, 125, 0.18);
 }
-.promo .cap { margin-top: 0.85rem; }
+.promo .cap { margin-top: 0.7rem; }
 .promo .cap .t {
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.35;
 }
 .promo .cap .d {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   opacity: 0.65;
   line-height: 1.5;
-  margin-top: 0.3rem;
+  margin-top: 0.28rem;
 }
 .promo .cap .u {
   font-family: var(--slidev-code-font-family, monospace);
-  font-size: 0.72rem;
-  margin-top: 0.35rem;
+  font-size: 0.66rem;
+  margin-top: 0.32rem;
+  word-break: break-all;
 }
 .promo .cap .u a {
   color: inherit;
@@ -390,8 +438,8 @@ layout: center
 
 <!--
 講者備忘：純工商，30~60 秒。
-左邊是自己的 Threads，右邊是公司的產品 Merak（坤安科技的零信任 / SDP 平台）。
-掃碼要留時間——講完停個十秒再翻頁。
+前三張是自己的：Threads、部落格、Line 社群；最後一張是公司的產品 Merak（坤安科技的零信任 / SDP 平台）。
+掃碼要留時間——四張碼比較多，講完停個十五秒再翻頁。
 -->
 
 ---
