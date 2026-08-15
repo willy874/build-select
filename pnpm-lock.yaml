@@ -51,6 +51,10 @@ importers:
       vue:
         specifier: ^3.5.39
         version: 3.5.39(typescript@6.0.3)
+    devDependencies:
+      vite-plugin-singlefile:
+        specifier: ^2.3.3
+        version: 2.3.3(rollup@4.62.2)(vite@8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
 
 packages:
 
@@ -4374,6 +4378,16 @@ packages:
     resolution: {integrity: sha512-8ajL5WG5BmYcC8zxeLOa3byCUG2AopKDAdNK7zStPHaRYYz1mxXBaeNFLu6vTEXj8UmXAsb5WlEmBBYwtlPEwA==}
     peerDependencies:
       vite: '>=5.0.0'
+
+  vite-plugin-singlefile@2.3.3:
+    resolution: {integrity: sha512-XVnGH0QzbOa8fxRSsHdCarVN1BSBXNi7uLMQYlrGRN5apdHkk62XQWRJhVever0lnfuyBkwn+kvVChdm/OoOUg==}
+    engines: {node: '>18.0.0'}
+    peerDependencies:
+      rollup: ^4.59.0
+      vite: ^5.4.21 || ^6.0.0 || ^7.0.0 || ^8.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
 
   vite-plugin-static-copy@4.1.1:
     resolution: {integrity: sha512-GrlA8YklrAfSyxJ4M3fdQLOo9oNkp56IM9FYgX/WtEgeIFkPwhu4wzpufBCIuNKCa6Fn77FkRdYxkHqV0FwjAw==}
@@ -9496,6 +9510,13 @@ snapshots:
       vite: 8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
+
+  vite-plugin-singlefile@2.3.3(rollup@4.62.2)(vite@8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)):
+    dependencies:
+      micromatch: 4.0.8
+      vite: 8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)
+    optionalDependencies:
+      rollup: 4.62.2
 
   vite-plugin-static-copy@4.1.1(vite@8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:

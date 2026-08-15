@@ -16,8 +16,15 @@ pnpm install      # 在 repo root 執行，一次裝好元件庫與簡報
 ```bash
 pnpm slides                                # 啟動簡報（http://localhost:3030）
 pnpm slides:build                          # 產出靜態網站到 slides/dist/
+pnpm slides:artifact                       # 打包成單一 HTML（slides/artifact.html）
 pnpm --filter build-select-slides export   # 匯出成 PDF
 ```
+
+`slides:artifact` 是給 [Claude Artifact](https://claude.ai/code/artifacts) 這種
+「只吃單一檔案、而且擋掉所有外部請求」的環境用的：
+JS / CSS / 圖片全部 inline 進同一支 HTML，router 改走 hash，字型改用系統 fallback，
+外層的 `<html>` / `<head>` / `<body>` 也拿掉（Artifact 發佈時會自己補）。
+細節寫在 `scripts/build-artifact.mjs`，live demo 一樣是真的元件、可以直接操作。
 
 或在 `slides/` 目錄下直接跑 `pnpm dev` / `pnpm build` / `pnpm export`。
 
@@ -28,6 +35,8 @@ slides/
 ├── slides.md              # 主檔：封面、用 src: 串接各版本、結尾「八版走過來」總覽表、最後的工商頁
 ├── vite.config.ts         # @v1..@v8 alias → 元件庫原始碼
 ├── tsconfig.json          # 同一組 alias，給編輯器用
+├── scripts/
+│   └── build-artifact.mjs # 打包成單一 HTML（給 Claude Artifact 用）
 ├── pages/
 │   ├── about.md           # 01 關於竹子（含待填欄位）
 │   ├── why.md             # 02 怎麼會開始想造輪子
