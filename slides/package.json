@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
+    "build:pages": "slidev build --base /build-select/",
     "build:artifact": "node scripts/build-artifact.mjs",
     "export": "slidev export"
   },
