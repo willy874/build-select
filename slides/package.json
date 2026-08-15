@@ -5,8 +5,8 @@
   "description": "Slidev 簡報：build-select 的 Select 元件逐版升級歷程",
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build",
-    "build:pages": "slidev build --base /build-select/",
+    "build": "slidev build && node scripts/copy-slide-assets.mjs",
+    "build:pages": "slidev build --base /build-select/ && node scripts/copy-slide-assets.mjs",
     "build:artifact": "node scripts/build-artifact.mjs",
     "export": "slidev export"
   },
